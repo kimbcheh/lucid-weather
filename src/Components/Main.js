@@ -1,7 +1,9 @@
+import SearchBar from './SearchBar'
+
 function Main() {
  return (
   <div>
-   <p>Search Placeholder</p>
+   <SearchBar />
    <p>Current Placeholder</p>
    <p>Forecast Placeholder</p>
   </div>
