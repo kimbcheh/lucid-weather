@@ -1,4 +1,11 @@
 import { Grid, Typography } from '@material-ui/core'
+import dayjs from 'dayjs'
+
+dayjs().format()
+
+// Capitalise weather description
+// Conditionally render rain amount if it exists
+// Convert UNIX time to actual times
 
 function CurrentWeather({ data }) {
  return (
@@ -20,8 +27,12 @@ function CurrentWeather({ data }) {
     <Typography variant='h6'>Humidity: {data.daily[0].humidity}%</Typography>
    </Grid>
    <Grid item>
-    <Typography variant='h6'>Sunrise: 7:00am</Typography>
-    <Typography variant='h6'>Sunset: 5:00pm</Typography>
+    <Typography variant='h6'>
+     Sunrise: {dayjs.unix(data.current.sunrise).format('h:mm a')}
+    </Typography>
+    <Typography variant='h6'>
+     Sunset: {dayjs.unix(data.current.sunset).format('h:mm a')}
+    </Typography>
    </Grid>
   </Grid>
  )
