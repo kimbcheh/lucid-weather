@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import SearchBar from './SearchBar'
+import CurrentWeather from './CurrentWeather'
 
 const key = process.env.REACT_APP_WEATHER_API_KEY
 
@@ -28,7 +29,7 @@ function Main() {
  return (
   <div>
    <SearchBar onSearch={setCity} />
-   <p>Current Placeholder</p>
+   <CurrentWeather />
    <p>Forecast Placeholder</p>
   </div>
  )
