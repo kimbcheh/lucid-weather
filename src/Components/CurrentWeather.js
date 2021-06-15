@@ -3,19 +3,22 @@ import dayjs from 'dayjs'
 
 dayjs().format()
 
-// Capitalise weather description
-// Conditionally render rain amount if it exists
-// Convert UNIX time to actual times
+function CurrentWeather({ data, city }) {
+ function capitaliseFirstLetter(description) {
+  return description.charAt(0).toUpperCase() + description.slice(1)
+ }
+ function convertTime(time) {
+  return dayjs.unix(time).format('h:mm a')
+ }
 
-function CurrentWeather({ data }) {
  return (
   <Grid container direction='column'>
    <Grid item>
-    <Typography variant='h1'>{data.current.temp}°</Typography>
+    <Typography variant='h2'>{data.current.temp}°</Typography>
    </Grid>
    <Grid item>
-    <Typography variant='h1'>
-     {data.current.weather[0].description} in Sydney
+    <Typography variant='h2'>
+     {capitaliseFirstLetter(data.current.weather[0].description)} in {city}.
     </Typography>
    </Grid>
    <Grid item>
@@ -23,15 +26,18 @@ function CurrentWeather({ data }) {
     <Typography variant='h6'>Max: {data.daily[0].temp.max}°</Typography>
    </Grid>
    <Grid item>
-    <Typography variant='h6'>Rain: 5%/1.18mm</Typography>
+    <Typography variant='h6'>
+     Rain: {data.daily[0].pop}%
+     {data.daily[0].rain && `/${data.daily[0].rain}mm`}
+    </Typography>
     <Typography variant='h6'>Humidity: {data.daily[0].humidity}%</Typography>
    </Grid>
    <Grid item>
     <Typography variant='h6'>
-     Sunrise: {dayjs.unix(data.current.sunrise).format('h:mm a')}
+     Sunrise: {convertTime(data.current.sunrise)}
     </Typography>
     <Typography variant='h6'>
-     Sunset: {dayjs.unix(data.current.sunset).format('h:mm a')}
+     Sunset: {convertTime(data.current.sunset)}
     </Typography>
    </Grid>
   </Grid>
