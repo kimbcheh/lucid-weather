@@ -3,9 +3,10 @@ import SearchBar from './SearchBar'
 
 function Main() {
  const [city, setCity] = useState()
+
  return (
   <div>
-   <SearchBar />
+   <SearchBar onSearch={setCity} />
    <p>Current Placeholder</p>
    <p>Forecast Placeholder</p>
   </div>
