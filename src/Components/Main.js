@@ -29,7 +29,7 @@ function Main() {
  return (
   <div>
    <SearchBar onSearch={setCity} />
-   <CurrentWeather data={data} />
+   {data && <CurrentWeather data={data} />}
    <p>Forecast Placeholder</p>
   </div>
  )
