@@ -7,7 +7,7 @@ import ForecastWeather from './ForecastWeather'
 const key = process.env.REACT_APP_WEATHER_API_KEY
 
 function Main() {
- const [city, setCity] = useState()
+ const [city, setCity] = useState('Melbourne')
  const [data, setData] = useState()
 
  useEffect(() => {
