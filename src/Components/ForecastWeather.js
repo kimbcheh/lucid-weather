@@ -4,7 +4,7 @@ import dayjs from 'dayjs'
 dayjs().format()
 
 function ForecastWeather({ data }) {
- const forecastArr = data.daily
+ const forecastArr = data.daily.slice(1)
  function convertDate(date) {
   return dayjs.unix(date).format('ddd D/M')
  }
