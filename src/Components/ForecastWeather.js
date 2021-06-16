@@ -1,6 +1,13 @@
 import { Grid, Typography } from '@material-ui/core'
+import dayjs from 'dayjs'
+
+dayjs().format()
+
 function ForecastWeather({ data }) {
  const forecastArr = data.daily
+ function convertDate(date) {
+  return dayjs.unix(date).format('ddd D/M')
+ }
 
  return (
   <Grid container>
@@ -8,7 +15,9 @@ function ForecastWeather({ data }) {
     return (
      <Grid container key={day.dt}>
       <Grid item>
-       <Typography variant='body1'>Date: {day.dt}</Typography>
+       <Typography variant='body1'>
+        {convertDate(day.dt).toUpperCase()}
+       </Typography>
       </Grid>
       <Grid item>
        <Typography variant='body1'>
