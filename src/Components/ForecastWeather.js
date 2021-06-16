@@ -8,16 +8,18 @@ function ForecastWeather({ data }) {
     return (
      <Grid container key={day.dt}>
       <Grid item>
-       <p>Date: {day.dt}</p>
+       <Typography variant='body1'>Date: {day.dt}</Typography>
       </Grid>
       <Grid item>
-       <p>Desc: {day.weather[0].description}</p>
+       <Typography variant='body1'>
+        {day.weather[0].description.toUpperCase()}
+       </Typography>
       </Grid>
       <Grid item>
-       <p>Max: {day.temp.max}</p>
+       <Typography variant='body1'>↑ {day.temp.max}</Typography>
       </Grid>
       <Grid item>
-       <p>Min: {day.temp.min}</p>
+       <Typography variant='body1'>↓ {day.temp.min}</Typography>
       </Grid>
      </Grid>
     )
