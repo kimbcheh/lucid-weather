@@ -44,15 +44,15 @@ function Main() {
   fetchData()
  }, [city])
 
+ const safeRender = !isLoading && !isError && data
+
  return (
   <div>
    <SearchBar onSearch={setCity} />
    {isError && <p>Sorry, something went wrong!</p>}
    {isLoading && <CircularProgress color='primary' />}
-   {!isLoading && !isError && data && (
-    <CurrentWeather data={data} city={city} />
-   )}
-   {!isLoading && !isError && data && <ForecastWeather data={data} />}
+   {safeRender && <CurrentWeather data={data} city={city} />}
+   {safeRender && <ForecastWeather data={data} />}
   </div>
  )
 }
