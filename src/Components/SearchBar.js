@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Button, Grid, TextField } from '@material-ui/core'
 
 function SearchBar({ onSearch }) {
  const [searchTerm, setSearchTerm] = useState()
@@ -15,21 +14,16 @@ function SearchBar({ onSearch }) {
  }
 
  return (
-  <Grid container>
-   <TextField
-    id='standard-basic'
-    label='Enter your city name'
+  <div>
+   <label for='cityName'>Enter an Australian city:</label>
+   <input
+    type='text'
+    id='cityName'
+    name='cityName'
     onChange={changeHandler}
-   />
-   <Button
-    variant='contained'
-    color='primary'
-    disableElevation
-    onClick={clickHandler}
-   >
-    Search
-   </Button>
-  </Grid>
+   ></input>
+   <button onClick={clickHandler}>Search</button>
+  </div>
  )
 }
 

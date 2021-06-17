@@ -1,4 +1,3 @@
-import { Grid, Typography } from '@material-ui/core'
 import { convertTime } from './DateFunctions'
 
 function CurrentWeather({ data }) {
@@ -6,36 +5,30 @@ function CurrentWeather({ data }) {
  let daily = data.daily[0]
 
  return (
-  <Grid container direction='column'>
-   <Grid item>
-    <Typography variant='h2'>{current.temp}°</Typography>
-   </Grid>
-   <Grid item>
-    <Typography variant='h4'>
-     Enjoy your {current.weather[0].description} today.
-    </Typography>
-   </Grid>
-   <Grid container direction='column'>
-    <Grid item>
-     <Typography variant='body1'>
+  <div>
+   <div>
+    <h2>{current.temp}°</h2>
+   </div>
+   <div>
+    <h4>Enjoy your {current.weather[0].description} today.</h4>
+   </div>
+   <div>
+    <div>
+     <p>
       TEMP: ↑ {daily.temp.max}° ↓ {daily.temp.min}°
-     </Typography>
-    </Grid>
-    <Grid item>
-     <Typography variant='body1'>
+     </p>
+    </div>
+    <div>
+     <p>
       RAIN: {daily.pop}% {daily.rain && `/ ${daily.rain}mm`}
-     </Typography>
-    </Grid>
-    <Grid item>
-     <Typography variant='body1'>
-      SUNRISE: {convertTime(current.sunrise)}
-     </Typography>
-     <Typography variant='body1'>
-      SUNSET: {convertTime(current.sunset)}
-     </Typography>
-    </Grid>
-   </Grid>
-  </Grid>
+     </p>
+    </div>
+    <div>
+     <p>SUNRISE: {convertTime(current.sunrise)}</p>
+     <p>SUNSET: {convertTime(current.sunset)}</p>
+    </div>
+   </div>
+  </div>
  )
 }
 

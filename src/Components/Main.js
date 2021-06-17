@@ -3,7 +3,6 @@ import axios from 'axios'
 import SearchBar from './SearchBar'
 import CurrentWeather from './CurrentWeather'
 import ForecastWeather from './ForecastWeather'
-import { CircularProgress } from '@material-ui/core'
 
 const key = process.env.REACT_APP_WEATHER_API_KEY
 
@@ -50,7 +49,7 @@ function Main() {
   <div>
    <SearchBar onSearch={setCity} />
    {isError && <p>Sorry, something went wrong!</p>}
-   {isLoading && <CircularProgress color='primary' />}
+   {isLoading && <p>Loading...</p>}
    {safeRender && <CurrentWeather data={data} />}
    {safeRender && <ForecastWeather data={data} />}
   </div>
