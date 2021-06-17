@@ -22,7 +22,6 @@ function Main() {
    } else {
     setIsLoading(true)
     setIsError(false)
-    console.log('loading')
     try {
      const coordinatesData = await axios.get(
       `http://api.openweathermap.org/geo/1.0/direct?q=${city},AU&limit=1&appid=${key}`
@@ -38,10 +37,8 @@ function Main() {
     } catch (error) {
      setIsError(true)
      console.error(error)
-     console.log('hi im an error')
     }
     setIsLoading(false)
-    console.log('not loading')
    }
   }
   fetchData()
