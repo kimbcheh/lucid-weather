@@ -17,20 +17,22 @@ function CurrentWeather({ data }) {
    </Grid>
    <Grid container direction='column'>
     <Grid item>
-     <Typography variant='h6'>
+     <Typography variant='body1'>
       TEMP: ↑ {daily.temp.max}° ↓ {daily.temp.min}°
      </Typography>
     </Grid>
     <Grid item>
-     <Typography variant='h6'>
+     <Typography variant='body1'>
       RAIN: {daily.pop}% {daily.rain && `/ ${daily.rain}mm`}
      </Typography>
     </Grid>
     <Grid item>
-     <Typography variant='h6'>
+     <Typography variant='body1'>
       SUNRISE: {convertTime(current.sunrise)}
      </Typography>
-     <Typography variant='h6'>SUNSET: {convertTime(current.sunset)}</Typography>
+     <Typography variant='body1'>
+      SUNSET: {convertTime(current.sunset)}
+     </Typography>
     </Grid>
    </Grid>
   </Grid>
