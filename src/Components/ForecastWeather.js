@@ -1,13 +1,8 @@
 import { Grid, Typography } from '@material-ui/core'
-import dayjs from 'dayjs'
-
-dayjs().format()
+import { convertDate } from './DateFunctions'
 
 function ForecastWeather({ data }) {
  const forecastArr = data.daily.slice(1)
- function convertDate(date) {
-  return dayjs.unix(date).format('ddd D/M')
- }
 
  return (
   <Grid container>

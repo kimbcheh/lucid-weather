@@ -1,14 +1,9 @@
 import { Grid, Typography } from '@material-ui/core'
-import dayjs from 'dayjs'
-
-dayjs().format()
+import { convertTime } from './DateFunctions'
 
 function CurrentWeather({ data, city }) {
  function capitaliseFirstLetter(description) {
   return description.charAt(0).toUpperCase() + description.slice(1)
- }
- function convertTime(time) {
-  return dayjs.unix(time).format('h:mm a')
  }
 
  let current = data.current
@@ -24,21 +19,23 @@ function CurrentWeather({ data, city }) {
      {capitaliseFirstLetter(current.weather[0].description)} in {city}.
     </Typography>
    </Grid>
-   <Grid item>
-    <Typography variant='h6'>Min: {daily.temp.min}°</Typography>
-    <Typography variant='h6'>Max: {daily.temp.max}°</Typography>
-   </Grid>
-   <Grid item>
-    <Typography variant='h6'>
-     Rain: {daily.pop}%{daily.rain && `/${daily.rain}mm`}
-    </Typography>
-    <Typography variant='h6'>Humidity: {daily.humidity}%</Typography>
-   </Grid>
-   <Grid item>
-    <Typography variant='h6'>
-     Sunrise: {convertTime(current.sunrise)}
-    </Typography>
-    <Typography variant='h6'>Sunset: {convertTime(current.sunset)}</Typography>
+   <Grid container direction='column'>
+    <Grid item>
+     <Typography variant='h6'>
+      TEMP: ↑ {daily.temp.max}° ↓ {daily.temp.min}°
+     </Typography>
+    </Grid>
+    <Grid item>
+     <Typography variant='h6'>
+      RAIN: {daily.pop}% {daily.rain && `/ ${daily.rain}mm`}
+     </Typography>
+    </Grid>
+    <Grid item>
+     <Typography variant='h6'>
+      SUNRISE: {convertTime(current.sunrise)}
+     </Typography>
+     <Typography variant='h6'>SUNSET: {convertTime(current.sunset)}</Typography>
+    </Grid>
    </Grid>
   </Grid>
  )
