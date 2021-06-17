@@ -51,7 +51,7 @@ function Main() {
    <SearchBar onSearch={setCity} />
    {isError && <p>Sorry, something went wrong!</p>}
    {isLoading && <CircularProgress color='primary' />}
-   {safeRender && <CurrentWeather data={data} city={city} />}
+   {safeRender && <CurrentWeather data={data} />}
    {safeRender && <ForecastWeather data={data} />}
   </div>
  )

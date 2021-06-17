@@ -1,11 +1,7 @@
 import { Grid, Typography } from '@material-ui/core'
 import { convertTime } from './DateFunctions'
 
-function CurrentWeather({ data, city }) {
- function capitaliseFirstLetter(description) {
-  return description.charAt(0).toUpperCase() + description.slice(1)
- }
-
+function CurrentWeather({ data }) {
  let current = data.current
  let daily = data.daily[0]
 
@@ -15,8 +11,8 @@ function CurrentWeather({ data, city }) {
     <Typography variant='h2'>{current.temp}°</Typography>
    </Grid>
    <Grid item>
-    <Typography variant='h2'>
-     {capitaliseFirstLetter(current.weather[0].description)} in {city}.
+    <Typography variant='h4'>
+     Enjoy your {current.weather[0].description} today.
     </Typography>
    </Grid>
    <Grid container direction='column'>
