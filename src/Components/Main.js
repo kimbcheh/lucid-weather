@@ -9,8 +9,11 @@ const key = process.env.REACT_APP_WEATHER_API_KEY
 function Main() {
  const [city, setCity] = useState('Melbourne')
  const [data, setData] = useState()
+ const [isLoading, setIsLoading] = useState(false)
 
  useEffect(() => {
+  setIsLoading(true)
+  console.log('loading')
   const fetchData = async () => {
    const coordinatesData = await axios.get(
     `http://api.openweathermap.org/geo/1.0/direct?q=${city},AU&limit=1&appid=${key}`
@@ -23,6 +26,8 @@ function Main() {
    )
    setData(weatherData.data)
    console.log(weatherData.data)
+   setIsLoading(false)
+   console.log('not loading')
   }
   fetchData()
  }, [city])
@@ -30,8 +35,9 @@ function Main() {
  return (
   <div>
    <SearchBar onSearch={setCity} />
-   {data && city && <CurrentWeather data={data} city={city} />}
-   {data && city && <ForecastWeather data={data} />}
+
+   {!isLoading && data && <CurrentWeather data={data} city={city} />}
+   {!isLoading && data && <ForecastWeather data={data} />}
   </div>
  )
 }
