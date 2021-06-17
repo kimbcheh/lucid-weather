@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import SearchBar from './SearchBar'
 import CurrentWeather from './CurrentWeather'
@@ -12,23 +12,29 @@ function Main() {
  const [data, setData] = useState()
  const [isLoading, setIsLoading] = useState(false)
 
- useEffect(() => {
-  setIsLoading(true)
-  console.log('loading')
-  const fetchData = async () => {
-   const coordinatesData = await axios.get(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${city},AU&limit=1&appid=${key}`
-   )
-   const lon = coordinatesData.data[0].lon
-   const lat = coordinatesData.data[0].lat
+ const initialRender = useRef(true)
 
-   const weatherData = await axios.get(
-    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=metric&appid=${key}`
-   )
-   setData(weatherData.data)
-   console.log(weatherData.data)
-   setIsLoading(false)
-   console.log('not loading')
+ useEffect(() => {
+  const fetchData = async () => {
+   if (initialRender.current) {
+    initialRender.current = false
+   } else {
+    setIsLoading(true)
+    console.log('loading')
+    const coordinatesData = await axios.get(
+     `http://api.openweathermap.org/geo/1.0/direct?q=${city},AU&limit=1&appid=${key}`
+    )
+    const lon = coordinatesData.data[0].lon
+    const lat = coordinatesData.data[0].lat
+
+    const weatherData = await axios.get(
+     `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=metric&appid=${key}`
+    )
+    setData(weatherData.data)
+    console.log(weatherData.data)
+    setIsLoading(false)
+    console.log('not loading')
+   }
   }
   fetchData()
  }, [city])
