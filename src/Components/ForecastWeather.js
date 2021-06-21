@@ -36,7 +36,7 @@ const ForecastDate = styled.p`
 
 const Heading = styled.h2`
  /* background-color: pink; */
- font-size: 1rem;
+ font-size: 0.8rem;
  margin: 0.25rem;
  text-decoration: underline;
 `
@@ -46,11 +46,11 @@ function ForecastWeather({ data }) {
 
  return (
   <ForecastContainer>
-   <Heading>FORECAST:</Heading>
+   <Heading>Forecast:</Heading>
    {forecastArr.map((day) => {
     return (
      <DailyForecast key={day.dt}>
-      <ForecastDate>{convertDate(day.dt).toUpperCase()}</ForecastDate>
+      <ForecastDate>{convertDate(day.dt)}</ForecastDate>
       <ForecastItem>↑ {day.temp.max}°</ForecastItem>
       <ForecastItem>↓ {day.temp.min}°</ForecastItem>
       {/* <ForecastItem>{day.weather[0].description.toUpperCase()}</ForecastItem> */}

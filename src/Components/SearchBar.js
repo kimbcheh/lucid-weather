@@ -13,7 +13,9 @@ const SearchContainer = styled.div`
 
 const SearchLabel = styled.label`
  /* background-color: teal; */
- font-size: 1rem;
+ font-size: 0.8rem;
+ font-weight: bold;
+ text-decoration: underline;
  margin: 0.25rem;
 `
 
@@ -23,6 +25,7 @@ const SearchInput = styled.input`
  border-radius: 0;
  border: 1px solid black;
  font-family: 'Roboto Mono', monospace;
+ font-size: 1rem;
  &:focus {
   outline: 2px solid pink;
  }

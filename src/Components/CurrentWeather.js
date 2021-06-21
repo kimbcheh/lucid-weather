@@ -28,7 +28,7 @@ const CurrentItem = styled.p`
 
 const Heading = styled.h2`
  /* background-color: pink; */
- font-size: 1rem;
+ font-size: 0.8rem;
  margin: 0.25rem;
  text-decoration: underline;
 `
@@ -39,17 +39,17 @@ function CurrentWeather({ data }) {
 
  return (
   <CurrentContainer>
-   <Heading>CURRENTLY:</Heading>
+   <Heading>Currently:</Heading>
    <CurrentTemp>{current.temp}°</CurrentTemp>
    <CurrentDesc>Enjoy your {current.weather[0].description} today.</CurrentDesc>
    <CurrentItem>
-    TEMP: ↑ {daily.temp.max}° ↓ {daily.temp.min}°
+    Temp: ↑ {daily.temp.max}° ↓ {daily.temp.min}°
    </CurrentItem>
    <CurrentItem>
-    RAIN: {daily.pop}% {daily.rain && `/ ${daily.rain}mm`}
+    Rain: {daily.pop}% {daily.rain && `/ ${daily.rain}mm`}
    </CurrentItem>
-   <CurrentItem>SUNRISE: {convertTime(current.sunrise)}</CurrentItem>
-   <CurrentItem>SUNSET: {convertTime(current.sunset)}</CurrentItem>
+   <CurrentItem>Sunrise: {convertTime(current.sunrise)}</CurrentItem>
+   <CurrentItem>Sunset: {convertTime(current.sunset)}</CurrentItem>
   </CurrentContainer>
  )
 }
