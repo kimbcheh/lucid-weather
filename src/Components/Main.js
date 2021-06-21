@@ -16,8 +16,9 @@ const MainContainer = styled.div`
 const DataContainer = styled.div`
  display: flex;
  flex-direction: column;
+ align-items: center;
  @media (min-width: 1280px) {
-  flex-direction: row;
+  /* align-items: center; */
  }
 `
 

@@ -7,7 +7,13 @@ const CurrentContainer = styled.div`
  padding-top: 1rem;
  border-top: 1px solid black;
  /* border-bottom: 1px solid black; */
- flex-grow: 2;
+ flex-grow: 1;
+ min-width: 100%;
+ max-width: 800px;
+ @media (min-width: 800px) {
+  min-width: 800px;
+  /* flex-grow: 1; */
+ }
 `
 
 const CurrentTemp = styled.p`

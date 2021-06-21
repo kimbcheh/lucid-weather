@@ -10,6 +10,13 @@ const ForecastContainer = styled.div`
  border-top: 1px solid black;
  /* border-bottom: 1px solid black; */
  flex-grow: 1;
+ max-width: 800px;
+ min-width: 100%;
+ /* flex-shrink: 0; */
+ @media (min-width: 800px) {
+  /* flex-grow: 1; */
+  min-width: 800px;
+ }
 `
 
 const DailyForecast = styled.div`
@@ -17,7 +24,7 @@ const DailyForecast = styled.div`
  display: flex;
  flex-direction: row;
  margin: 0.25rem;
- max-width: 480px;
+ /* max-width: 480px; */
 `
 
 const ForecastItem = styled.p`
@@ -25,6 +32,7 @@ const ForecastItem = styled.p`
  flex-grow: 1;
  flex-shrink: 1;
  flex-basis: 0;
+ /* align-self: flex-end; */
  margin: 0;
 `
 
