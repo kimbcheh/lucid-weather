@@ -38,6 +38,8 @@ const SearchButton = styled.button`
  color: white;
  padding: 1rem;
  text-align: center;
+ align-self: center;
+ width: 50%;
  font-size: 1rem;
  cursor: pointer;
  font-family: 'Roboto Mono', monospace;
