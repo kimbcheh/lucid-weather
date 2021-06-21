@@ -8,6 +8,22 @@ export const Heading = styled.h2`
  text-decoration: underline;
 `
 
+export const DataItemContainer = styled.div`
+ border-top: 1px solid black;
+ flex-grow: 1;
+ max-width: 800px;
+ min-width: 100%;
+ padding-bottom: 1rem;
+ padding-top: 1rem;
+ @media (min-width: 800px) {
+  min-width: 800px;
+ }
+ .forecast {
+  display: flex;
+  flex-direction: column;
+ }
+`
+
 // Main.js styles
 
 export const MainContainer = styled.div`
@@ -17,9 +33,9 @@ export const MainContainer = styled.div`
 `
 
 export const DataContainer = styled.div`
+ align-items: center;
  display: flex;
  flex-direction: column;
- align-items: center;
 `
 
 export const Spinner = styled.div`
@@ -46,17 +62,17 @@ export const Spinner = styled.div`
 
 // CurrentWeather.js styles
 
-export const CurrentContainer = styled.div`
- padding-bottom: 1rem;
- padding-top: 1rem;
- border-top: 1px solid black;
- flex-grow: 1;
- min-width: 100%;
- max-width: 800px;
- @media (min-width: 800px) {
-  min-width: 800px;
- }
-`
+// export const CurrentContainer = styled.div`
+//  padding-bottom: 1rem;
+//  padding-top: 1rem;
+//  border-top: 1px solid black;
+//  flex-grow: 1;
+//  min-width: 100%;
+//  max-width: 800px;
+//  @media (min-width: 800px) {
+//   min-width: 800px;
+//  }
+// `
 
 export const CurrentTemp = styled.p`
  font-size: 3.5rem;
@@ -74,19 +90,19 @@ export const CurrentItem = styled.p`
 
 // WeatherForecast.js styles
 
-export const ForecastContainer = styled.div`
- display: flex;
- flex-direction: column;
- padding-bottom: 1rem;
- padding-top: 1rem;
- border-top: 1px solid black;
- flex-grow: 1;
- max-width: 800px;
- min-width: 100%;
- @media (min-width: 800px) {
-  min-width: 800px;
- }
-`
+// export const ForecastContainer = styled.div`
+//  display: flex;
+//  flex-direction: column;
+//  padding-bottom: 1rem;
+//  padding-top: 1rem;
+//  border-top: 1px solid black;
+//  flex-grow: 1;
+//  max-width: 800px;
+//  min-width: 100%;
+//  @media (min-width: 800px) {
+//   min-width: 800px;
+//  }
+// `
 
 export const DailyForecast = styled.div`
  display: flex;
@@ -169,4 +185,27 @@ export const SearchButton = styled.button`
  &:active {
   transform: scale(0.96);
  }
+`
+
+// Footer.js styles
+
+export const FooterContainer = styled.div`
+ border-top: 1px solid black;
+ height: 50px;
+ bottom: 0;
+ width: 100%;
+ text-align: center;
+ position: relative;
+`
+
+export const FooterText = styled.p`
+ font-size: 0.8rem;
+`
+
+// Header.js styles
+
+export const HeaderText = styled.h1`
+ font-size: 2.25rem;
+ font-weight: normal;
+ text-align: center;
 `

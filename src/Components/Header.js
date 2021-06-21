@@ -1,13 +1,7 @@
-import styled from 'styled-components'
-
-const HeaderText = styled.h1`
- font-size: 2.25rem;
- font-weight: normal;
- text-align: center;
-`
+import * as S from './Styles'
 
 function Header() {
- return <HeaderText>Lucid Weather</HeaderText>
+ return <S.HeaderText>Lucid Weather</S.HeaderText>
 }
 
 export default Header

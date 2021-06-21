@@ -6,7 +6,7 @@ function CurrentWeather({ data }) {
  let daily = data.daily[0]
 
  return (
-  <S.CurrentContainer>
+  <S.DataItemContainer>
    <S.Heading>Currently:</S.Heading>
    <S.CurrentTemp>{current.temp}°</S.CurrentTemp>
    <S.CurrentDesc>
@@ -20,7 +20,7 @@ function CurrentWeather({ data }) {
    </S.CurrentItem>
    <S.CurrentItem>Sunrise: {convertTime(current.sunrise)}</S.CurrentItem>
    <S.CurrentItem>Sunset: {convertTime(current.sunset)}</S.CurrentItem>
-  </S.CurrentContainer>
+  </S.DataItemContainer>
  )
 }
 

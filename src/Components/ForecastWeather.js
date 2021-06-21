@@ -5,7 +5,7 @@ function ForecastWeather({ data }) {
  const forecastArr = data.daily.slice(1)
 
  return (
-  <S.ForecastContainer>
+  <S.DataItemContainer className='forecast'>
    <S.Heading>Forecast:</S.Heading>
    {forecastArr.map((day) => {
     return (
@@ -13,11 +13,10 @@ function ForecastWeather({ data }) {
       <S.ForecastDate>{convertDate(day.dt)}</S.ForecastDate>
       <S.ForecastItem>↑ {day.temp.max}°</S.ForecastItem>
       <S.ForecastItem>↓ {day.temp.min}°</S.ForecastItem>
-      {/* <ForecastItem>{day.weather[0].description.toUpperCase()}</ForecastItem> */}
      </S.DailyForecast>
     )
    })}
-  </S.ForecastContainer>
+  </S.DataItemContainer>
  )
 }
 
