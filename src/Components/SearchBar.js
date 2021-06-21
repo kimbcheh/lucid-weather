@@ -22,6 +22,7 @@ const SearchInput = styled.input`
  padding: 0.5rem;
  border-radius: 0;
  border: 1px solid black;
+ font-family: 'Roboto Mono', monospace;
  &:focus {
   outline: 2px solid pink;
  }
@@ -36,6 +37,7 @@ const SearchButton = styled.button`
  text-align: center;
  font-size: 1rem;
  cursor: pointer;
+ font-family: 'Roboto Mono', monospace;
  &:focus {
   outline: 2px solid pink;
  }
