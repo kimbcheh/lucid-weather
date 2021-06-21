@@ -7,6 +7,7 @@ const CurrentContainer = styled.div`
  padding-top: 1rem;
  /* border-top: 1px solid black; */
  border-bottom: 1px solid black;
+ flex-grow: 2;
 `
 
 const CurrentTemp = styled.p`

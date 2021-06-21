@@ -3,8 +3,22 @@ import axios from 'axios'
 import SearchBar from './SearchBar'
 import CurrentWeather from './CurrentWeather'
 import ForecastWeather from './ForecastWeather'
+import styled from 'styled-components'
 
 const key = process.env.REACT_APP_WEATHER_API_KEY
+
+const MainContainer = styled.div`
+ display: flex;
+ flex-direction: column;
+`
+
+const DataContainer = styled.div`
+ display: flex;
+ flex-direction: column;
+ @media (min-width: 1280px) {
+  flex-direction: row;
+ }
+`
 
 function Main() {
  const [city, setCity] = useState()
@@ -46,13 +60,15 @@ function Main() {
  const safeRender = !isLoading && !isError && data
 
  return (
-  <div>
+  <MainContainer>
    <SearchBar onSearch={setCity} />
    {isError && <p>Sorry, something went wrong!</p>}
    {isLoading && <p>Loading...</p>}
-   {safeRender && <CurrentWeather data={data} />}
-   {safeRender && <ForecastWeather data={data} />}
-  </div>
+   <DataContainer>
+    {safeRender && <CurrentWeather data={data} />}
+    {safeRender && <ForecastWeather data={data} />}
+   </DataContainer>
+  </MainContainer>
  )
 }
 

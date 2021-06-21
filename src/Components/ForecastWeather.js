@@ -9,6 +9,7 @@ const ForecastContainer = styled.div`
  padding-top: 1rem;
  /* border-top: 1px solid black; */
  border-bottom: 1px solid black;
+ flex-grow: 1;
 `
 
 const DailyForecast = styled.div`
@@ -16,6 +17,7 @@ const DailyForecast = styled.div`
  display: flex;
  flex-direction: row;
  margin: 0.25rem;
+ max-width: 480px;
 `
 
 const ForecastItem = styled.p`

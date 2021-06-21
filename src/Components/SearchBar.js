@@ -9,6 +9,15 @@ const SearchContainer = styled.div`
  padding-top: 1rem;
  border-top: 1px solid black;
  border-bottom: 1px solid black;
+ align-items: center;
+`
+
+const SearchInputContainer = styled.div`
+ width: 100%;
+ flex-grow: 1;
+ display: flex;
+ flex-direction: column;
+ max-width: 480px;
 `
 
 const SearchLabel = styled.label`
@@ -36,13 +45,15 @@ const SearchButton = styled.button`
  background-color: black;
  border: none;
  color: white;
- padding: 1rem;
+ padding: 0.5rem;
  text-align: center;
- align-self: center;
+ /* align-self: center; */
  width: 50%;
+ max-width: 200px;
  font-size: 1rem;
  cursor: pointer;
  font-family: 'Roboto Mono', monospace;
+ /* max-width: 480px; */
  &:focus {
   outline: 2px solid pink;
  }
@@ -63,13 +74,15 @@ function SearchBar({ onSearch }) {
 
  return (
   <SearchContainer>
-   <SearchLabel for='cityName'>Enter an Australian city:</SearchLabel>
-   <SearchInput
-    type='text'
-    id='cityName'
-    name='cityName'
-    onChange={changeHandler}
-   ></SearchInput>
+   <SearchInputContainer>
+    <SearchLabel for='cityName'>Enter an Australian city:</SearchLabel>
+    <SearchInput
+     type='text'
+     id='cityName'
+     name='cityName'
+     onChange={changeHandler}
+    ></SearchInput>
+   </SearchInputContainer>
    <SearchButton onClick={clickHandler}>Search</SearchButton>
   </SearchContainer>
  )
