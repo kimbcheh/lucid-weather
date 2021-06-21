@@ -47,11 +47,11 @@ function Main() {
  const safeRender = !isLoading && !isError && data
 
  return (
-  <div className='container container--flex container--column container--100vh'>
+  <div className='cont cont--flex-column cont--main'>
    <SearchBar onSearch={setCity} />
    {isError && <p>Sorry, something went wrong!</p>}
    {isLoading && <div className='spinner' />}
-   <div className='container container--flex container--column container--align-center'>
+   <div className='cont cont--align-center cont--flex-column'>
     {safeRender && <CurrentWeather data={data} />}
     {safeRender && <ForecastWeather data={data} />}
    </div>

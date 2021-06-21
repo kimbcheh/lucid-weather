@@ -6,7 +6,7 @@ function CurrentWeather({ data }) {
  let daily = data.daily[0]
 
  return (
-  <div className='container container--border container--padding container--data'>
+  <div className='cont cont--border cont--data cont--padding'>
    <p className='subheading subheading--bold-underline'>Currently:</p>
    <p className='heading heading--xlarge'>{current.temp}°</p>
    <p className='heading'>Enjoy your {current.weather[0].description} today.</p>

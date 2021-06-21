@@ -15,8 +15,8 @@ function SearchBar({ onSearch }) {
  }
 
  return (
-  <div className='container container--flex container--column container--padding container--border container--align-center'>
-   <div className='container container--flex container--column container--search-input'>
+  <div className='cont cont--align-center cont--border cont--flex-column cont--padding'>
+   <div className='cont cont--flex-column cont--search-input'>
     <label className='subheading subheading--bold-underline' for='cityName'>
      Enter an Australian city:
     </label>
