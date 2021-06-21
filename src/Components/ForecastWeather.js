@@ -1,73 +1,23 @@
 import { convertDate } from './DateFunctions'
-import styled from 'styled-components'
-
-const ForecastContainer = styled.div`
- /* background-color: red; */
- display: flex;
- flex-direction: column;
- padding-bottom: 1rem;
- padding-top: 1rem;
- border-top: 1px solid black;
- /* border-bottom: 1px solid black; */
- flex-grow: 1;
- max-width: 800px;
- min-width: 100%;
- /* flex-shrink: 0; */
- @media (min-width: 800px) {
-  /* flex-grow: 1; */
-  min-width: 800px;
- }
-`
-
-const DailyForecast = styled.div`
- /* background-color: green; */
- display: flex;
- flex-direction: row;
- margin: 0.25rem;
- /* max-width: 480px; */
-`
-
-const ForecastItem = styled.p`
- /* background-color: blueviolet; */
- flex-grow: 1;
- flex-shrink: 1;
- flex-basis: 0;
- /* align-self: flex-end; */
- margin: 0;
-`
-
-const ForecastDate = styled.p`
- /* background-color: brown; */
- flex-grow: 2;
- flex-shrink: 1;
- flex-basis: 0;
- margin: 0;
-`
-
-const Heading = styled.h2`
- /* background-color: pink; */
- font-size: 0.8rem;
- margin: 0.25rem;
- text-decoration: underline;
-`
+import * as S from './Styles'
 
 function ForecastWeather({ data }) {
  const forecastArr = data.daily.slice(1)
 
  return (
-  <ForecastContainer>
-   <Heading>Forecast:</Heading>
+  <S.ForecastContainer>
+   <S.Heading>Forecast:</S.Heading>
    {forecastArr.map((day) => {
     return (
-     <DailyForecast key={day.dt}>
-      <ForecastDate>{convertDate(day.dt)}</ForecastDate>
-      <ForecastItem>↑ {day.temp.max}°</ForecastItem>
-      <ForecastItem>↓ {day.temp.min}°</ForecastItem>
+     <S.DailyForecast key={day.dt}>
+      <S.ForecastDate>{convertDate(day.dt)}</S.ForecastDate>
+      <S.ForecastItem>↑ {day.temp.max}°</S.ForecastItem>
+      <S.ForecastItem>↓ {day.temp.min}°</S.ForecastItem>
       {/* <ForecastItem>{day.weather[0].description.toUpperCase()}</ForecastItem> */}
-     </DailyForecast>
+     </S.DailyForecast>
     )
    })}
-  </ForecastContainer>
+  </S.ForecastContainer>
  )
 }
 

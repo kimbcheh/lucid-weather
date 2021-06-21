@@ -3,46 +3,9 @@ import axios from 'axios'
 import SearchBar from './SearchBar'
 import CurrentWeather from './CurrentWeather'
 import ForecastWeather from './ForecastWeather'
-import styled from 'styled-components'
+import * as S from './Styles'
 
 const key = process.env.REACT_APP_WEATHER_API_KEY
-
-const MainContainer = styled.div`
- display: flex;
- flex-direction: column;
- min-height: 100vh;
-`
-
-const DataContainer = styled.div`
- display: flex;
- flex-direction: column;
- align-items: center;
- @media (min-width: 1280px) {
-  /* align-items: center; */
- }
-`
-
-const Spinner = styled.div`
- border: 4px solid #f3f3f3;
- border-radius: 50%;
- border-top: 4px solid #000;
- width: 40px;
- height: 40px;
- animation: spin 2s linear infinite;
- top: 50%;
- right: 50%;
- margin-top: -20px;
- margin-right: -20px;
- position: fixed;
- @keyframes spin {
-  0% {
-   transform: rotate(0deg);
-  }
-  100% {
-   transform: rotate(360deg);
-  }
- }
-`
 
 function Main() {
  const [city, setCity] = useState()
@@ -84,15 +47,15 @@ function Main() {
  const safeRender = !isLoading && !isError && data
 
  return (
-  <MainContainer>
+  <S.MainContainer>
    <SearchBar onSearch={setCity} />
    {isError && <p>Sorry, something went wrong!</p>}
-   {isLoading && <Spinner />}
-   <DataContainer>
+   {isLoading && <S.Spinner />}
+   <S.DataContainer>
     {safeRender && <CurrentWeather data={data} />}
     {safeRender && <ForecastWeather data={data} />}
-   </DataContainer>
-  </MainContainer>
+   </S.DataContainer>
+  </S.MainContainer>
  )
 }
 
