@@ -29,13 +29,19 @@ const Spinner = styled.div`
  width: 40px;
  height: 40px;
  animation: spin 2s linear infinite;
- position: absolute;
- top: 50%; 
- left: 50%;
- transform: translate(-50%,-50%);
+ top: 50%;
+ right: 50%;
+ margin-top: -20px;
+ margin-right: -20px;
+ position: fixed;
  @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+   transform: rotate(0deg);
+  }
+  100% {
+   transform: rotate(360deg);
+  }
+ }
 `
 
 function Main() {
