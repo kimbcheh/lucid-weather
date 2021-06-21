@@ -10,6 +10,7 @@ const key = process.env.REACT_APP_WEATHER_API_KEY
 const MainContainer = styled.div`
  display: flex;
  flex-direction: column;
+ min-height: 90vh;
 `
 
 const DataContainer = styled.div`
