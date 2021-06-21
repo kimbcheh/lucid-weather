@@ -10,9 +10,6 @@ const ForecastContainer = styled.div`
  border-top: 1px solid black;
  /* border-bottom: 1px solid black; */
  flex-grow: 1;
- @media (min-width: 1280px) {
-  border-bottom: 1px solid black;
- }
 `
 
 const DailyForecast = styled.div`
