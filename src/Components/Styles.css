@@ -173,3 +173,35 @@ body {
   transform: rotate(360deg);
  }
 }
+
+/* weather condition colours */
+
+.bg01d,
+.bg01n {
+ background-color: #f2e9e4;
+}
+
+.bg13d,
+.bg13n,
+.bg50d,
+.bg50n {
+ background-color: #c9ada7;
+}
+
+.bg02d,
+.bg02n,
+.bg03d,
+.bg03n,
+.bg04d,
+.bg04n {
+ background-color: #9a8c98;
+}
+
+.bg09d,
+.bg09n,
+.bg10d,
+.bg10n,
+.bg11d,
+.bg11n {
+ background-color: #555977;
+}
