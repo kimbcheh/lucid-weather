@@ -12,7 +12,7 @@ const CurrentContainer = styled.div`
 
 const CurrentTemp = styled.p`
  /* background-color: slategrey; */
- font-size: 3rem;
+ font-size: 3.5rem;
  margin: 0.25rem;
 `
 
