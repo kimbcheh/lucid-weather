@@ -2,24 +2,24 @@ import { convertDate } from './DateFunctions'
 import styled from 'styled-components'
 
 const ForecastContainer = styled.div`
- background-color: red;
+ /* background-color: red; */
  display: flex;
  flex-direction: column;
  padding-bottom: 1rem;
  padding-top: 1rem;
- border-top: 1px solid black;
+ /* border-top: 1px solid black; */
  border-bottom: 1px solid black;
 `
 
 const DailyForecast = styled.div`
- background-color: green;
+ /* background-color: green; */
  display: flex;
  flex-direction: row;
  margin: 0.25rem;
 `
 
 const ForecastItem = styled.p`
- background-color: blueviolet;
+ /* background-color: blueviolet; */
  flex-grow: 1;
  flex-shrink: 1;
  flex-basis: 0;
@@ -27,7 +27,7 @@ const ForecastItem = styled.p`
 `
 
 const ForecastDate = styled.p`
- background-color: brown;
+ /* background-color: brown; */
  flex-grow: 2;
  flex-shrink: 1;
  flex-basis: 0;
@@ -35,7 +35,7 @@ const ForecastDate = styled.p`
 `
 
 const Heading = styled.h2`
- background-color: pink;
+ /* background-color: pink; */
  font-size: 1rem;
  margin: 0.25rem;
  text-decoration: underline;

@@ -2,32 +2,32 @@ import { convertTime } from './DateFunctions'
 import styled from 'styled-components'
 
 const CurrentContainer = styled.div`
- background-color: salmon;
+ /* background-color: salmon; */
  padding-bottom: 1rem;
  padding-top: 1rem;
- border-top: 1px solid black;
+ /* border-top: 1px solid black; */
  border-bottom: 1px solid black;
 `
 
 const CurrentTemp = styled.p`
- background-color: slategrey;
+ /* background-color: slategrey; */
  font-size: 3rem;
  margin: 0.25rem;
 `
 
 const CurrentDesc = styled.p`
- background-color: violet;
+ /* background-color: violet; */
  font-size: 2.25rem;
  margin: 0.25rem;
 `
 
 const CurrentItem = styled.p`
- background-color: powderblue;
+ /* background-color: powderblue; */
  margin: 0.25rem;
 `
 
 const Heading = styled.h2`
- background-color: pink;
+ /* background-color: pink; */
  font-size: 1rem;
  margin: 0.25rem;
  text-decoration: underline;

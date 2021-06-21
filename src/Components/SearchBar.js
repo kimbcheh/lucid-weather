@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 
 const SearchContainer = styled.div`
- background-color: seashell;
+ /* background-color: seashell; */
  display: flex;
  flex-direction: column;
  padding-bottom: 1rem;
@@ -12,7 +12,7 @@ const SearchContainer = styled.div`
 `
 
 const SearchLabel = styled.label`
- background-color: teal;
+ /* background-color: teal; */
  font-size: 1rem;
  margin: 0.25rem;
 `
