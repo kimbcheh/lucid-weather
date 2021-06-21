@@ -1,21 +1,34 @@
 import { convertDate } from './DateFunctions'
+import styled from 'styled-components'
+
+const ForecastContainer = styled.div`
+ background-color: red;
+ display: flex;
+ flex-direction: column;
+`
+
+const DailyForecast = styled.div`
+ background-color: green;
+ display: flex;
+ flex-direction: row;
+`
 
 function ForecastWeather({ data }) {
  const forecastArr = data.daily.slice(1)
 
  return (
-  <div>
+  <ForecastContainer>
    {forecastArr.map((day) => {
     return (
-     <div key={day.dt}>
+     <DailyForecast key={day.dt}>
       <p>{convertDate(day.dt).toUpperCase()}</p>
-      <p>{day.weather[0].description.toUpperCase()}</p>
       <p>↑ {day.temp.max}</p>
       <p>↓ {day.temp.min}</p>
-     </div>
+      <p>{day.weather[0].description.toUpperCase()}</p>
+     </DailyForecast>
     )
    })}
-  </div>
+  </ForecastContainer>
  )
 }
 
