@@ -1,5 +1,6 @@
 body {
  font-family: 'Roboto Mono', monospace;
+ transition: ease-in 1s;
 }
 
 /* containers */
