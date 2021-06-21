@@ -3,7 +3,7 @@ import axios from 'axios'
 import SearchBar from './SearchBar'
 import CurrentWeather from './CurrentWeather'
 import ForecastWeather from './ForecastWeather'
-import * as S from './Styles'
+import './Styles.css'
 
 const key = process.env.REACT_APP_WEATHER_API_KEY
 
@@ -47,15 +47,15 @@ function Main() {
  const safeRender = !isLoading && !isError && data
 
  return (
-  <S.MainContainer>
+  <div className='container container--flex container--column container--100vh'>
    <SearchBar onSearch={setCity} />
    {isError && <p>Sorry, something went wrong!</p>}
-   {isLoading && <S.Spinner />}
-   <S.DataContainer>
+   {isLoading && <div className='spinner' />}
+   <div className='container container--flex container--column container--align-center'>
     {safeRender && <CurrentWeather data={data} />}
     {safeRender && <ForecastWeather data={data} />}
-   </S.DataContainer>
-  </S.MainContainer>
+   </div>
+  </div>
  )
 }
 

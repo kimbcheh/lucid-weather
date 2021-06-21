@@ -1,22 +1,22 @@
 import { convertDate } from './DateFunctions'
-import * as S from './Styles'
+import './Styles.css'
 
 function ForecastWeather({ data }) {
  const forecastArr = data.daily.slice(1)
 
  return (
-  <S.DataItemContainer className='forecast'>
-   <S.Heading>Forecast:</S.Heading>
+  <div className='container container--flex container--column container--border container--padding container--data'>
+   <p className='subheading subheading--bold-underline'>Forecast:</p>
    {forecastArr.map((day) => {
     return (
-     <S.DailyForecast key={day.dt}>
-      <S.ForecastDate>{convertDate(day.dt)}</S.ForecastDate>
-      <S.ForecastItem>↑ {day.temp.max}°</S.ForecastItem>
-      <S.ForecastItem>↓ {day.temp.min}°</S.ForecastItem>
-     </S.DailyForecast>
+     <div className='container container--flex container--row' key={day.dt}>
+      <p className='body body--flex-grow-2'>{convertDate(day.dt)}</p>
+      <p className='body body--flex-grow-1'>↑ {day.temp.max}°</p>
+      <p className='body body--flex-grow-1'>↓ {day.temp.min}°</p>
+     </div>
     )
    })}
-  </S.DataItemContainer>
+  </div>
  )
 }
 

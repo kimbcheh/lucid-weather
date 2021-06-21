@@ -1,7 +1,7 @@
-import * as S from './Styles'
+import './Styles.css'
 
 function Header() {
- return <S.HeaderText>Lucid Weather</S.HeaderText>
+ return <h1 className='heading heading--center'>Lucid Weather</h1>
 }
 
 export default Header

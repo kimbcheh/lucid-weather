@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import * as S from './Styles'
+import './Styles.css'
 
 function SearchBar({ onSearch }) {
  const [searchTerm, setSearchTerm] = useState()
@@ -15,18 +15,23 @@ function SearchBar({ onSearch }) {
  }
 
  return (
-  <S.SearchContainer>
-   <S.SearchInputContainer>
-    <S.SearchLabel for='cityName'>Enter an Australian city:</S.SearchLabel>
-    <S.SearchInput
+  <div className='container container--flex container--column container--padding container--border container--align-center'>
+   <div className='container container--flex container--column container--search-input'>
+    <label className='subheading subheading--bold-underline' for='cityName'>
+     Enter an Australian city:
+    </label>
+    <input
+     className='input'
      type='text'
      id='cityName'
      name='cityName'
      onChange={changeHandler}
-    ></S.SearchInput>
-   </S.SearchInputContainer>
-   <S.SearchButton onClick={clickHandler}>Search</S.SearchButton>
-  </S.SearchContainer>
+    ></input>
+   </div>
+   <button className='button' onClick={clickHandler}>
+    Search
+   </button>
+  </div>
  )
 }
 

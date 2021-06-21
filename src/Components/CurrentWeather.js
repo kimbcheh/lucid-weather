@@ -1,26 +1,24 @@
 import { convertTime } from './DateFunctions'
-import * as S from './Styles'
+import './Styles.css'
 
 function CurrentWeather({ data }) {
  let current = data.current
  let daily = data.daily[0]
 
  return (
-  <S.DataItemContainer>
-   <S.Heading>Currently:</S.Heading>
-   <S.CurrentTemp>{current.temp}°</S.CurrentTemp>
-   <S.CurrentDesc>
-    Enjoy your {current.weather[0].description} today.
-   </S.CurrentDesc>
-   <S.CurrentItem>
+  <div className='container container--border container--padding container--data'>
+   <p className='subheading subheading--bold-underline'>Currently:</p>
+   <p className='heading heading--xlarge'>{current.temp}°</p>
+   <p className='heading'>Enjoy your {current.weather[0].description} today.</p>
+   <p className='body'>
     Temp: ↑ {daily.temp.max}° ↓ {daily.temp.min}°
-   </S.CurrentItem>
-   <S.CurrentItem>
+   </p>
+   <p className='body'>
     Rain: {daily.pop}% {daily.rain && `/ ${daily.rain}mm`}
-   </S.CurrentItem>
-   <S.CurrentItem>Sunrise: {convertTime(current.sunrise)}</S.CurrentItem>
-   <S.CurrentItem>Sunset: {convertTime(current.sunset)}</S.CurrentItem>
-  </S.DataItemContainer>
+   </p>
+   <p className='body'>Sunrise: {convertTime(current.sunrise)}</p>
+   <p className='body'>Sunset: {convertTime(current.sunset)}</p>
+  </div>
  )
 }
 

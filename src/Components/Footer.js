@@ -1,10 +1,10 @@
-import * as S from './Styles'
+import './Styles.css'
 
 function Footer() {
  return (
-  <S.FooterContainer>
-   <S.FooterText>&#128171; Made by Kimberly Cheh. </S.FooterText>
-  </S.FooterContainer>
+  <div className='container container--border container--footer'>
+   <p className='subheading'>&#128171; Made by Kimberly Cheh. </p>
+  </div>
  )
 }
 
