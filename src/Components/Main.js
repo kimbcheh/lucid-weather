@@ -3,7 +3,7 @@ import axios from 'axios'
 import SearchBar from './SearchBar'
 import CurrentWeather from './CurrentWeather'
 import ForecastWeather from './ForecastWeather'
-import { CircularProgress } from '@material-ui/core'
+import './Styles.css'
 
 const key = process.env.REACT_APP_WEATHER_API_KEY
 
@@ -47,12 +47,14 @@ function Main() {
  const safeRender = !isLoading && !isError && data
 
  return (
-  <div>
+  <div className='cont cont--flex-column cont--main'>
    <SearchBar onSearch={setCity} />
    {isError && <p>Sorry, something went wrong!</p>}
-   {isLoading && <CircularProgress color='primary' />}
-   {safeRender && <CurrentWeather data={data} city={city} />}
-   {safeRender && <ForecastWeather data={data} />}
+   {isLoading && <div className='spinner' />}
+   <div className='cont cont--align-center cont--flex-column'>
+    {safeRender && <CurrentWeather data={data} />}
+    {safeRender && <ForecastWeather data={data} />}
+   </div>
   </div>
  )
 }

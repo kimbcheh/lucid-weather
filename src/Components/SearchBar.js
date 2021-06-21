@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, Grid, TextField } from '@material-ui/core'
+import './Styles.css'
 
 function SearchBar({ onSearch }) {
  const [searchTerm, setSearchTerm] = useState()
@@ -15,21 +15,23 @@ function SearchBar({ onSearch }) {
  }
 
  return (
-  <Grid container>
-   <TextField
-    id='standard-basic'
-    label='Enter your city name'
-    onChange={changeHandler}
-   />
-   <Button
-    variant='contained'
-    color='primary'
-    disableElevation
-    onClick={clickHandler}
-   >
+  <div className='cont cont--align-center cont--border cont--flex-column cont--padding'>
+   <div className='cont cont--flex-column cont--search-input'>
+    <label className='subheading subheading--bold-underline' for='cityName'>
+     Enter an Australian city:
+    </label>
+    <input
+     className='input'
+     type='text'
+     id='cityName'
+     name='cityName'
+     onChange={changeHandler}
+    ></input>
+   </div>
+   <button className='button' onClick={clickHandler}>
     Search
-   </Button>
-  </Grid>
+   </button>
+  </div>
  )
 }
 

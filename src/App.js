@@ -1,18 +1,15 @@
 import Main from './Components/Main'
-import { Grid } from '@material-ui/core'
-import './App.css'
+import Footer from './Components/Footer'
+import Header from './Components/Header'
+import './Components/Styles.css'
 
 function App() {
  return (
-  <Grid container direction='column'>
-   <Grid item>
-    <p>Header Placeholder</p>
-   </Grid>
+  <div>
+   <Header />
    <Main />
-   <Grid item>
-    <p>Footer Placeholder</p>
-   </Grid>
-  </Grid>
+   <Footer />
+  </div>
  )
 }
 

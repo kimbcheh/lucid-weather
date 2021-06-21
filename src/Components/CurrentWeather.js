@@ -1,43 +1,24 @@
-import { Grid, Typography } from '@material-ui/core'
 import { convertTime } from './DateFunctions'
+import './Styles.css'
 
-function CurrentWeather({ data, city }) {
- function capitaliseFirstLetter(description) {
-  return description.charAt(0).toUpperCase() + description.slice(1)
- }
-
+function CurrentWeather({ data }) {
  let current = data.current
  let daily = data.daily[0]
 
  return (
-  <Grid container direction='column'>
-   <Grid item>
-    <Typography variant='h2'>{current.temp}°</Typography>
-   </Grid>
-   <Grid item>
-    <Typography variant='h2'>
-     {capitaliseFirstLetter(current.weather[0].description)} in {city}.
-    </Typography>
-   </Grid>
-   <Grid container direction='column'>
-    <Grid item>
-     <Typography variant='h6'>
-      TEMP: ↑ {daily.temp.max}° ↓ {daily.temp.min}°
-     </Typography>
-    </Grid>
-    <Grid item>
-     <Typography variant='h6'>
-      RAIN: {daily.pop}% {daily.rain && `/ ${daily.rain}mm`}
-     </Typography>
-    </Grid>
-    <Grid item>
-     <Typography variant='h6'>
-      SUNRISE: {convertTime(current.sunrise)}
-     </Typography>
-     <Typography variant='h6'>SUNSET: {convertTime(current.sunset)}</Typography>
-    </Grid>
-   </Grid>
-  </Grid>
+  <div className='cont cont--border cont--data cont--padding'>
+   <p className='subheading subheading--bold-underline'>Currently:</p>
+   <p className='heading heading--xlarge'>{current.temp}°</p>
+   <p className='heading'>Enjoy your {current.weather[0].description} today.</p>
+   <p className='body'>
+    Temp: ↑ {daily.temp.max}° ↓ {daily.temp.min}°
+   </p>
+   <p className='body'>
+    Rain: {daily.pop}% {daily.rain && `/ ${daily.rain}mm`}
+   </p>
+   <p className='body'>Sunrise: {convertTime(current.sunrise)}</p>
+   <p className='body'>Sunset: {convertTime(current.sunset)}</p>
+  </div>
  )
 }
 
