@@ -5,8 +5,8 @@ const CurrentContainer = styled.div`
  /* background-color: salmon; */
  padding-bottom: 1rem;
  padding-top: 1rem;
- /* border-top: 1px solid black; */
- border-bottom: 1px solid black;
+ border-top: 1px solid black;
+ /* border-bottom: 1px solid black; */
  flex-grow: 2;
 `
 

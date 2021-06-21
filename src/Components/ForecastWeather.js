@@ -7,9 +7,12 @@ const ForecastContainer = styled.div`
  flex-direction: column;
  padding-bottom: 1rem;
  padding-top: 1rem;
- /* border-top: 1px solid black; */
- border-bottom: 1px solid black;
+ border-top: 1px solid black;
+ /* border-bottom: 1px solid black; */
  flex-grow: 1;
+ @media (min-width: 1280px) {
+  border-bottom: 1px solid black;
+ }
 `
 
 const DailyForecast = styled.div`

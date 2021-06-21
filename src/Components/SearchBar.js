@@ -8,7 +8,7 @@ const SearchContainer = styled.div`
  padding-bottom: 1rem;
  padding-top: 1rem;
  border-top: 1px solid black;
- border-bottom: 1px solid black;
+ /* border-bottom: 1px solid black; */
  align-items: center;
 `
 
