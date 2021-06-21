@@ -43,7 +43,7 @@ const SearchInput = styled.input`
 const SearchButton = styled.button`
  margin: 0.25rem;
  background-color: black;
- border: none;
+ border: 1px solid black;
  color: white;
  padding: 0.5rem;
  text-align: center;
@@ -54,8 +54,17 @@ const SearchButton = styled.button`
  cursor: pointer;
  font-family: 'Roboto Mono', monospace;
  /* max-width: 480px; */
+ transition: 0.2s all;
+ &:hover {
+  background-color: white;
+  color: black;
+  /* border: 1px solid black; */
+ }
  &:focus {
   outline: 2px solid pink;
+ }
+ &:active {
+  transform: scale(0.96);
  }
 `
 
