@@ -1,8 +1,8 @@
 import Main from './Components/Main'
 import Footer from './Components/Footer'
+import Header from './Components/Header'
 import './App.css'
 import { createGlobalStyle } from 'styled-components'
-import styled from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -15,7 +15,7 @@ function App() {
  return (
   <div>
    <GlobalStyle />
-   <p>Header Placeholder</p>
+   <Header />
    <Main />
    <Footer />
   </div>
