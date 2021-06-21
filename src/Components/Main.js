@@ -22,6 +22,22 @@ const DataContainer = styled.div`
  }
 `
 
+const Spinner = styled.div`
+ border: 4px solid #f3f3f3;
+ border-radius: 50%;
+ border-top: 4px solid #000;
+ width: 40px;
+ height: 40px;
+ animation: spin 2s linear infinite;
+ position: absolute;
+ top: 50%; 
+ left: 50%;
+ transform: translate(-50%,-50%);
+ @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`
+
 function Main() {
  const [city, setCity] = useState()
  const [data, setData] = useState()
@@ -65,7 +81,7 @@ function Main() {
   <MainContainer>
    <SearchBar onSearch={setCity} />
    {isError && <p>Sorry, something went wrong!</p>}
-   {isLoading && <p>Loading...</p>}
+   {isLoading && <Spinner />}
    <DataContainer>
     {safeRender && <CurrentWeather data={data} />}
     {safeRender && <ForecastWeather data={data} />}
