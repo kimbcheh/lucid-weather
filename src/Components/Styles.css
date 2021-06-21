@@ -110,6 +110,7 @@ body {
 .input {
  margin: 0.25rem;
  padding: 0.5rem;
+ background-color: transparent;
  border-radius: 0;
  border: 1px solid black;
  font-family: 'Roboto Mono', monospace;
@@ -117,14 +118,14 @@ body {
 }
 
 .input:focus {
- outline: 2px solid pink;
+ outline: none;
 }
 
 .button {
  margin: 0.25rem;
  background-color: black;
  border: 1px solid black;
- color: white;
+ color: #f3f3f3;
  padding: 0.5rem;
  text-align: center;
  width: 50%;
@@ -136,12 +137,12 @@ body {
 }
 
 .button:hover {
- background-color: white;
+ background-color: transparent;
  color: black;
 }
 
 .button:focus {
- outline: 2px solid pink;
+ outline: none;
 }
 
 .button:active {
