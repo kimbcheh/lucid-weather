@@ -11,6 +11,23 @@ const DailyForecast = styled.div`
  background-color: green;
  display: flex;
  flex-direction: row;
+ margin: 0.25rem;
+`
+
+const ForecastItem = styled.p`
+ background-color: blueviolet;
+ flex-grow: 1;
+ flex-shrink: 1;
+ flex-basis: 0;
+ margin: 0;
+`
+
+const ForecastDate = styled.p`
+ background-color: brown;
+ flex-grow: 2;
+ flex-shrink: 1;
+ flex-basis: 0;
+ margin: 0;
 `
 
 function ForecastWeather({ data }) {
@@ -21,10 +38,10 @@ function ForecastWeather({ data }) {
    {forecastArr.map((day) => {
     return (
      <DailyForecast key={day.dt}>
-      <p>{convertDate(day.dt).toUpperCase()}</p>
-      <p>↑ {day.temp.max}</p>
-      <p>↓ {day.temp.min}</p>
-      <p>{day.weather[0].description.toUpperCase()}</p>
+      <ForecastDate>{convertDate(day.dt).toUpperCase()}</ForecastDate>
+      <ForecastItem>↑ {day.temp.max}</ForecastItem>
+      <ForecastItem>↓ {day.temp.min}</ForecastItem>
+      {/* <ForecastItem>{day.weather[0].description.toUpperCase()}</ForecastItem> */}
      </DailyForecast>
     )
    })}

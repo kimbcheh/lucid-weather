@@ -3,7 +3,7 @@ import dayjs from 'dayjs'
 dayjs().format()
 
 export function convertDate(date) {
- return dayjs.unix(date).format('ddd D/M')
+ return dayjs.unix(date).format('D/M ddd')
 }
 
 export function convertTime(time) {
