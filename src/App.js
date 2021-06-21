@@ -4,7 +4,7 @@ import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
 body{
-font-family:'Roboto Mono';
+font-family:'Roboto Mono', monospace;
 }
 `
 
