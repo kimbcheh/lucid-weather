@@ -53,7 +53,13 @@ function Main() {
  return (
   <div className='cont cont--flex-column cont--main'>
    <SearchBar onSearch={setCity} />
-   {isError && <p>Sorry, something went wrong!</p>}
+   {isError && (
+    <div className='cont cont--flex-row cont--justify-center'>
+     <p className='body'>
+      Sorry, something went wrong! Try a different city or try again later...
+     </p>
+    </div>
+   )}
    {isLoading && <div className='spinner' />}
    <div className='cont cont--align-center cont--flex-column'>
     {safeRender && <CurrentWeather data={data} city={city} />}

@@ -27,6 +27,10 @@ body {
  flex-direction: row;
 }
 
+.cont--justify-center {
+ justify-content: center;
+}
+
 .cont--padding {
  padding-bottom: 1rem;
  padding-top: 1rem;
