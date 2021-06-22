@@ -34,6 +34,10 @@ function Main() {
      )
      setData(weatherData.data)
      console.log(weatherData.data)
+     document.body.classList.remove(...document.body.classList)
+     document.body.classList.add(
+      `bg${weatherData.data.current.weather[0].icon}`
+     )
     } catch (error) {
      setIsError(true)
      console.error(error)
