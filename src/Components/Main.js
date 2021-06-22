@@ -24,7 +24,8 @@ function Main() {
     setIsError(false)
     try {
      const coordinatesData = await axios.get(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${city},AU&limit=1&appid=${key}`
+      `http://api.openweathermap.org/geo/1.0/direct?q=${city},AU&limit=1&appid=${key}`,
+      { timeout: 5000 }
      )
      const lon = coordinatesData.data[0].lon
      const lat = coordinatesData.data[0].lat
