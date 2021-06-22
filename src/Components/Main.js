@@ -24,7 +24,8 @@ function Main() {
     setIsError(false)
     try {
      const coordinatesData = await axios.get(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${city},AU&limit=1&appid=${key}`
+      `http://api.openweathermap.org/geo/1.0/direct?q=${city},AU&limit=1&appid=${key}`,
+      { timeout: 5000 }
      )
      const lon = coordinatesData.data[0].lon
      const lat = coordinatesData.data[0].lat
@@ -53,7 +54,13 @@ function Main() {
  return (
   <div className='cont cont--flex-column cont--main'>
    <SearchBar onSearch={setCity} />
-   {isError && <p>Sorry, something went wrong!</p>}
+   {isError && (
+    <div className='cont cont--flex-row cont--justify-center'>
+     <p className='body'>
+      Sorry, something went wrong! Try a different city or try again later...
+     </p>
+    </div>
+   )}
    {isLoading && <div className='spinner' />}
    <div className='cont cont--align-center cont--flex-column'>
     {safeRender && <CurrentWeather data={data} city={city} />}
