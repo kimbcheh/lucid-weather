@@ -9,9 +9,13 @@ function SearchBar({ onSearch }) {
  }
 
  const clickHandler = (event) => {
-  event.stopPropagation()
-  event.preventDefault()
-  onSearch(searchTerm)
+  if (searchTerm === '') {
+   alert('Sorry, search term cannot be empty!')
+  } else {
+   event.stopPropagation()
+   event.preventDefault()
+   onSearch(searchTerm)
+  }
  }
 
  return (
@@ -28,6 +32,7 @@ function SearchBar({ onSearch }) {
      onChange={changeHandler}
      placeholder='e.g. Melbourne'
      value={searchTerm}
+     required
     ></input>
    </div>
    <button className='button' onClick={clickHandler}>
