@@ -56,7 +56,7 @@ function Main() {
    {isError && <p>Sorry, something went wrong!</p>}
    {isLoading && <div className='spinner' />}
    <div className='cont cont--align-center cont--flex-column'>
-    {safeRender && <CurrentWeather data={data} />}
+    {safeRender && <CurrentWeather data={data} city={city} />}
     {safeRender && <ForecastWeather data={data} />}
    </div>
   </div>

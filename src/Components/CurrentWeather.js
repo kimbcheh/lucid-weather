@@ -1,13 +1,15 @@
 import { convertTime } from './DateFunctions'
 import './Styles.css'
 
-function CurrentWeather({ data }) {
+function CurrentWeather({ data, city }) {
  let current = data.current
  let daily = data.daily[0]
 
  return (
   <div className='cont cont--border cont--data cont--padding'>
-   <p className='subheading subheading--bold-underline'>Currently:</p>
+   <p className='subheading subheading--bold-underline'>
+    Currently in {city.toUpperCase()}:
+   </p>
    <p className='heading heading--xlarge'>{current.temp}°</p>
    <p className='heading'>Enjoy your {current.weather[0].description} today.</p>
    <p className='body'>
