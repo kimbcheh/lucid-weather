@@ -119,7 +119,7 @@ body {
 }
 
 .input:focus {
- outline: none;
+ outline: 1px dotted #282844;
 }
 
 .button {
@@ -143,11 +143,15 @@ body {
 }
 
 .button:focus {
- outline: none;
+ outline: 1px dotted #282844;
 }
 
 .button:active {
  transform: scale(0.92);
+}
+
+::placeholder {
+ color: #282844;
 }
 
 /* spinner */
