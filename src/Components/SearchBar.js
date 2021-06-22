@@ -27,6 +27,7 @@ function SearchBar({ onSearch }) {
      name='cityName'
      onChange={changeHandler}
      placeholder='e.g. Melbourne'
+     value={searchTerm}
     ></input>
    </div>
    <button className='button' onClick={clickHandler}>
