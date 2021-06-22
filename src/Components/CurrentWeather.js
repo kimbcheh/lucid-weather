@@ -1,5 +1,5 @@
 import { convertTime } from './DateFunctions'
-import './Styles.css'
+import '../styles/styles.css'
 
 function CurrentWeather({ data, city }) {
  let current = data.current

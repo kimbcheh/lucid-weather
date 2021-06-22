@@ -1,4 +1,4 @@
-import './Styles.css'
+import '../styles/styles.css'
 
 function Header() {
  return <h1 className='heading heading--center'>Lucid Weather</h1>

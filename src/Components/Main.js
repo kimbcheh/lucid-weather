@@ -4,7 +4,7 @@ import ErrorMessage from './ErrorMessage'
 import SearchBar from './SearchBar'
 import CurrentWeather from './CurrentWeather'
 import ForecastWeather from './ForecastWeather'
-import './Styles.css'
+import '../styles/styles.css'
 
 const key = process.env.REACT_APP_WEATHER_API_KEY
 

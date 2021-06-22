@@ -1,5 +1,5 @@
 import { convertDate } from './DateFunctions'
-import './Styles.css'
+import '../styles/styles.css'
 
 function ForecastWeather({ data }) {
  const forecastArr = data.daily.slice(1)
