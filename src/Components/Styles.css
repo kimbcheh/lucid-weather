@@ -119,14 +119,14 @@ body {
 }
 
 .input:focus {
- outline: 1px dotted #282844;
+ outline: 1px dotted black;
 }
 
 .button {
  margin: 0.25rem;
  background-color: black;
  border: 1px solid black;
- color: #f3f3f3;
+ color: white;
  padding: 0.5rem;
  text-align: center;
  width: 50%;
@@ -143,7 +143,7 @@ body {
 }
 
 .button:focus {
- outline: 1px dotted #282844;
+ outline: 1px dotted black;
 }
 
 .button:active {
@@ -151,15 +151,16 @@ body {
 }
 
 ::placeholder {
- color: #282844;
+ color: black;
+ opacity: 0.5;
 }
 
 /* spinner */
 
 .spinner {
- border: 4px solid #f3f3f3;
+ border: 4px solid white;
  border-radius: 50%;
- border-top: 4px solid #000;
+ border-top: 4px solid black;
  width: 40px;
  height: 40px;
  animation: spin 2s linear infinite;
