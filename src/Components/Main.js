@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
+import ErrorMessage from './ErrorMessage'
 import SearchBar from './SearchBar'
 import CurrentWeather from './CurrentWeather'
 import ForecastWeather from './ForecastWeather'
@@ -54,13 +55,7 @@ function Main() {
  return (
   <div className='cont cont--flex-column cont--main'>
    <SearchBar onSearch={setCity} />
-   {isError && (
-    <div className='cont cont--flex-row cont--justify-center'>
-     <p className='body'>
-      Sorry, something went wrong! Try a different city or try again later...
-     </p>
-    </div>
-   )}
+   {isError && <ErrorMessage />}
    {isLoading && <div className='spinner' />}
    <div className='cont cont--align-center cont--flex-column'>
     {safeRender && <CurrentWeather data={data} city={city} />}
