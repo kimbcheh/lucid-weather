@@ -1,4 +1,4 @@
-import { convertDate } from './DateFunctions'
+import { convertDate } from '../utilities/DateFunctions'
 import '../styles/styles.css'
 
 function ForecastWeather({ data }) {

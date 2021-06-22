@@ -1,4 +1,4 @@
-import { convertTime } from './DateFunctions'
+import { convertTime } from '../utilities/DateFunctions'
 import '../styles/styles.css'
 
 function CurrentWeather({ data, city }) {
