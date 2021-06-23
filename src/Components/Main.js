@@ -5,6 +5,7 @@ import SearchBar from './SearchBar'
 import CurrentWeather from './CurrentWeather'
 import ForecastWeather from './ForecastWeather'
 import '../styles/styles.css'
+import fetchLocation from '../services/FetchLocation'
 
 const key = process.env.REACT_APP_WEATHER_API_KEY
 
@@ -24,10 +25,7 @@ function Main() {
     setIsLoading(true)
     setIsError(false)
     try {
-     const coordinatesData = await axios.get(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${city},AU&limit=1&appid=${key}`,
-      { timeout: 5000 }
-     )
+     const coordinatesData = await fetchLocation(city)
      const lon = coordinatesData.data[0].lon
      const lat = coordinatesData.data[0].lat
 
