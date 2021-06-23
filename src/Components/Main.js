@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import axios from 'axios'
 import ErrorMessage from './ErrorMessage'
 import SearchBar from './SearchBar'
 import CurrentWeather from './CurrentWeather'
@@ -7,8 +6,6 @@ import ForecastWeather from './ForecastWeather'
 import '../styles/styles.css'
 import fetchLocation from '../services/FetchLocation'
 import fetchWeather from '../services/FetchWeather'
-
-const key = process.env.REACT_APP_WEATHER_API_KEY
 
 function Main() {
  const [city, setCity] = useState()
