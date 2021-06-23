@@ -26,10 +26,8 @@ function Main() {
      const coordinatesData = await fetchLocation(city)
      const lon = coordinatesData.data[0].lon
      const lat = coordinatesData.data[0].lat
-
      const weatherData = await fetchWeather(lat, lon)
      setData(weatherData.data)
-     console.log(weatherData.data)
      document.body.classList.remove(...document.body.classList)
      document.body.classList.add(
       `bg${weatherData.data.current.weather[0].icon}`
