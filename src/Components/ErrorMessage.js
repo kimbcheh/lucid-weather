@@ -1,3 +1,5 @@
+import '../styles/styles.css'
+
 function ErrorMessage() {
  return (
   <div className='cont cont--flex-row cont--justify-center'>
