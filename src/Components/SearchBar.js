@@ -19,7 +19,7 @@ function SearchBar({ onSearch }) {
  }
 
  return (
-  <div className='cont cont--align-center cont--border cont--flex-column cont--padding'>
+  <section className='cont cont--align-center cont--border cont--flex-column cont--padding'>
    <div className='cont cont--flex-column cont--search-input'>
     <label className='subheading subheading--bold-underline' htmlFor='cityName'>
      Enter an Australian city:
@@ -38,7 +38,7 @@ function SearchBar({ onSearch }) {
    <button className='button' onClick={clickHandler}>
     Search
    </button>
-  </div>
+  </section>
  )
 }
 
