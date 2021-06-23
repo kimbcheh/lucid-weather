@@ -5,11 +5,8 @@ import App from './App'
 describe('App', () => {
  test('Renders App component', () => {
   render(<App />)
-  const headerElement = screen.getByText(/Lucid Weather/)
-  expect(headerElement).toBeInTheDocument()
-  const mainElement = screen.getByText(/Enter an Australian city:/)
-  expect(mainElement).toBeInTheDocument()
-  const footerElement = screen.getByText(/Made by Kimberly Cheh./)
-  expect(footerElement).toBeInTheDocument()
+  expect(screen.getByText('Lucid Weather')).toBeInTheDocument()
+  expect(screen.getByText('Enter an Australian city:')).toBeInTheDocument()
+  expect(screen.getByText('💫 Made by Kimberly Cheh.')).toBeInTheDocument()
  })
 })
