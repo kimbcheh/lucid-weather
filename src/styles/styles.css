@@ -6,7 +6,7 @@ body {
 /* containers */
 
 .cont {
- margin: 0.25em;
+ margin: 0.25rem;
 }
 
 .cont--align-center {
@@ -51,8 +51,8 @@ body {
 .cont--footer {
  height: 50px;
  bottom: 0;
- width: 100%;
- position: relative;
+ justify-content: center;
+ margin: 0.25rem;
 }
 
 .cont--main {
