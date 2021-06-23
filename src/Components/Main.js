@@ -45,15 +45,15 @@ function Main() {
  const safeRender = !isLoading && !isError && data
 
  return (
-  <div className='cont cont--flex-column cont--main'>
+  <main className='cont cont--flex-column cont--main'>
    <SearchBar onSearch={setCity} />
    {isError && <ErrorMessage />}
    {isLoading && <div className='spinner' />}
-   <div className='cont cont--align-center cont--flex-column'>
+   <section className='cont cont--align-center cont--flex-column'>
     {safeRender && <CurrentWeather data={data} city={city} />}
     {safeRender && <ForecastWeather data={data} />}
-   </div>
-  </div>
+   </section>
+  </main>
  )
 }
 
