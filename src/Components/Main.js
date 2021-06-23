@@ -6,6 +6,7 @@ import CurrentWeather from './CurrentWeather'
 import ForecastWeather from './ForecastWeather'
 import '../styles/styles.css'
 import fetchLocation from '../services/FetchLocation'
+import fetchWeather from '../services/FetchWeather'
 
 const key = process.env.REACT_APP_WEATHER_API_KEY
 
@@ -29,9 +30,7 @@ function Main() {
      const lon = coordinatesData.data[0].lon
      const lat = coordinatesData.data[0].lat
 
-     const weatherData = await axios.get(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=metric&appid=${key}`
-     )
+     const weatherData = await fetchWeather(lat, lon)
      setData(weatherData.data)
      console.log(weatherData.data)
      document.body.classList.remove(...document.body.classList)
