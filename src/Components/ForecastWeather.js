@@ -5,8 +5,8 @@ function ForecastWeather({ data }) {
  const forecastArr = data.daily.slice(1)
 
  return (
-  <div className='cont cont--border cont--flex-column cont--padding cont--data'>
-   <p className='subheading subheading--bold-underline'>Forecast:</p>
+  <section className='cont cont--border cont--flex-column cont--padding cont--data'>
+   <h2 className='subheading subheading--bold-underline'>Forecast:</h2>
    {forecastArr.map((day) => {
     return (
      <div className='cont cont--flex-row' key={day.dt}>
@@ -16,7 +16,7 @@ function ForecastWeather({ data }) {
      </div>
     )
    })}
-  </div>
+  </section>
  )
 }
 
